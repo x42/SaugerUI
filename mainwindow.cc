@@ -143,10 +143,10 @@ void MainWindow::update_device_info()
 		json_int_t sec_side = v["side_brush_work_time"];
 		json_int_t sec_filt = v["filter_work_time"];
 		json_int_t sec_sens = v["sensor_dirty_time"];
-		ui->con_mainbrush->setValue(100.0 * sec_main / (300 * 3600));
-		ui->con_sidebrush->setValue(100.0 * sec_side / (200 * 3600));
-		ui->con_filter->setValue(100.0 * sec_filt / (150 * 3600));
-		ui->con_sensor->setValue(100.0 * sec_sens / (30 * 3600));
+		ui->con_mainbrush->setValue(std::min(100.0, 100.0 * sec_main / (300 * 3600)));
+		ui->con_sidebrush->setValue(std::min(100.0, 100.0 * sec_side / (200 * 3600)));
+		ui->con_filter->setValue(std::min(100.0, 100.0 * sec_filt / (150 * 3600)));
+		ui->con_sensor->setValue(std::min(100.0, 100.0 * sec_sens / (30 * 3600)));
 
 		ui->tme_sensor->setText(QString("%1 (left: %2)")
 				.arg(format_time(sec_sens))
