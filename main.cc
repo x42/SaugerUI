@@ -2,7 +2,7 @@
 #include <QApplication>
 #include <QMessageBox>
 
-#include "sauger/miio.h"
+#include "c-miio/miio.h"
 
 int main(int argc, char *argv[])
 {

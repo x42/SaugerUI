@@ -5,7 +5,7 @@
 #include <QTimer>
 #include <QMutex>
 
-#include "sauger/miio.h"
+#include "c-miio/miio.h"
 
 namespace Ui {
 class MainWindow;
